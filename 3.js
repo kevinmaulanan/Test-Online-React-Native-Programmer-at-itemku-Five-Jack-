@@ -25,10 +25,11 @@ function solution(relation) {
       }
     }
   }
-  if (countId == 6) {
+
+  if (countId == relation.length) {
     hasil++;
   }
-  if (countNameMajor == 6) {
+  if (countNameMajor == relation.length) {
     hasil++;
   }
   console.log(hasil);
@@ -41,7 +42,7 @@ let relation = [
   [300, "tube", "computer", 3],
   [400, "con", "computer", 4],
   [500, "muzi", "music", 3],
-  [600, "apeach", "musicA", 2],
+  [600, "apeach", "music", 2],
 ];
 
 //The length of the row of relation is 1 ~ 20, and each row represents a tuple of relations.
@@ -66,7 +67,11 @@ for (let baris = 0; baris < relation.length; baris++) {
   for (let kolom = 0; kolom < relation[baris].length; kolom++) {
     if (testRegex.test(relation[baris][kolom]) == false) {
       start = false;
-      console.log(relation[baris][kolom] + " not authorization");
+      console.log(
+        "The length of " +
+          relation[baris][kolom] +
+          " in relation is 1 ~ 8, and consists of only lowercase letters and numbers"
+      );
     }
   }
 }
